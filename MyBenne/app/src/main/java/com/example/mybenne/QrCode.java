@@ -3,16 +3,11 @@ package com.example.mybenne;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class MainActivity extends AppCompatActivity {
-<<<<<<< HEAD
-String test;
-=======
-String WAZAAA;
-String plop;
->>>>>>> Qrcode
+public class QrCode extends AppCompatActivity {
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_qr_code);
     }
 }
