@@ -17,7 +17,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+<<<<<<< HEAD
         <activity android:name=".Geolocalisation"></activity>
+=======
+        <activity android:name=".envoieNouvelleBenne"></activity>
+        <activity android:name=".modifierInfoDestinataire" />
+        <activity android:name=".modifierInfoUtilisateur" />
+>>>>>>> Interface
         <activity android:name=".QrCode" />
         <activity android:name=".MainActivity">
             <intent-filter>

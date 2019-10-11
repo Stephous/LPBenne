@@ -27,30 +27,61 @@ public class MainActivity extends AppCompatActivity {
         modifierInfoUtilisateur.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String nameClasse = "modifierInfoUtilisateur";
-                changementVue(nameClasse);
+                modifierInfoUtilisateur();
             }
         });
         modifierInfoDestinataire.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String nameClasse = "modifierInfoDestinataire";
-                changementVue(nameClasse);
+                modifierInfoDestinataire();
             }
         });
         envoieNouvelleBenne.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String nameClasse = "envoieNouvelleBenne";
-                changementVue(nameClasse);
+                envoieNouvelleBenne();
             }
         });
     }
 
-    protected void changementVue(String nameClasse)
+    protected void modifierInfoUtilisateur()
     {
         Intent intent1 = new Intent();
-        intent1.setClass(this, System.out.println(nameClasse).class);
+        intent1.setClass(this, modifierInfoUtilisateur.class);
+
+        Intent intent2 = getIntent();
+        if (intent2!= null)
+        {
+            Bundle extras2 = intent2.getExtras();
+            if (extras2 != null)
+            {
+                intent1.putExtra("Nom", extras2.getString("Nom"));
+            }
+            startActivity(intent1);
+        }
+    }
+
+    protected void modifierInfoDestinataire()
+    {
+        Intent intent1 = new Intent();
+        intent1.setClass(this, modifierInfoDestinataire.class);
+
+        Intent intent2 = getIntent();
+        if (intent2!= null)
+        {
+            Bundle extras2 = intent2.getExtras();
+            if (extras2 != null)
+            {
+                intent1.putExtra("Nom", extras2.getString("Nom"));
+            }
+            startActivity(intent1);
+        }
+    }
+
+    protected void envoieNouvelleBenne()
+    {
+        Intent intent1 = new Intent();
+        intent1.setClass(this, envoieNouvelleBenne.class);
 
         Intent intent2 = getIntent();
         if (intent2!= null)
