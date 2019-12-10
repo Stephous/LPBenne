@@ -2,6 +2,7 @@
     <string name="app_name">My Benne</string>
     <string name="no_qr">No QrCrode Detected</string>
     <string name="Qr_Button">Scan QrCode</string>
-    <string name="title_activity_geolocalisation">Map</string>
+    <string name="title_activity_modifier_info_destinataire">modifierInfoDestinataire</string>
+    <string name="title_activity_affichage">affichage</string>
 
 </resources>

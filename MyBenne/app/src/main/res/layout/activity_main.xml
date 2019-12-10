@@ -7,9 +7,12 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:text="Dêpot de bennes"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -18,28 +21,53 @@
 
     <Button
         android:id="@+id/modifierInfoUtilisateur"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="141dp"
+        android:layout_marginTop="340dp"
         android:text="Modifier les informations de l'utilisateur"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="-1dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/modifierInfoDestinataire"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="208dp"
+        android:layout_marginTop="420dp"
         android:text="Modifier les informations du destinataire"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/envoieNouvelleBenne"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="496dp"
+        android:text="Envoyer une nouvelle benne"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="220dp"
+        android:layout_height="159dp"
+        android:layout_marginTop="108dp"
+        android:contentDescription="image_presesntation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/image_illustration" />
+
+    <Button
+        android:id="@+id/afficher"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="276dp"
-        android:text="Envoyer une nouvelle benne"
+        android:text="Afficher les données"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="0dp" />
+        tools:layout_editor_absoluteX="-66dp" />
 
 </android.support.constraint.ConstraintLayout>
