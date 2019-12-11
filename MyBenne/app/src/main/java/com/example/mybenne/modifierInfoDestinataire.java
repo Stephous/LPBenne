@@ -1,27 +1,52 @@
 package com.example.mybenne;
 
 import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 public class modifierInfoDestinataire extends AppCompatActivity {
+    DatabaseManager db;
 
+    EditText nom, prenom, telephone;
     Button retour;
+    Button enregistrer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_modifier_info_destinataire);
 
+        db = new DatabaseManager(this);
+
+        nom=(EditText) findViewById(R.id.nom);
+        prenom=(EditText) findViewById(R.id.prenom);
+        telephone=(EditText) findViewById(R.id.telephone);
+
         retour = findViewById(R.id.retour);
+        enregistrer = findViewById(R.id.enregistrer);
 
         retour.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 retour();
             }
+        });
+
+        enregistrer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                boolean isInserted=db.insertData(nom.getText().toString(), prenom.getText().toString(), telephone.getText().toString(), "destinataire");
+                if(isInserted==true)
+                    Toast.makeText(modifierInfoDestinataire.this, "Données enregistrée !", Toast.LENGTH_LONG).show();
+                else
+                    Toast.makeText(modifierInfoDestinataire.this, "Données non enregistrée !", Toast.LENGTH_LONG).show();
+            }
+
         });
     }
 
