@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
     Button modifierInfoUtilisateur;
     Button modifierInfoDestinataire;
     Button envoieNouvelleBenne;
+    Button MAP;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
         modifierInfoUtilisateur = findViewById(R.id.modifierInfoUtilisateur);
         modifierInfoDestinataire = findViewById(R.id.modifierInfoDestinataire);
         envoieNouvelleBenne = findViewById(R.id.envoieNouvelleBenne);
+        MAP = findViewById(R.id.MAP);
 
         modifierInfoUtilisateur.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -36,10 +38,17 @@ public class MainActivity extends AppCompatActivity {
                 modifierInfoDestinataire();
             }
         });
+
         envoieNouvelleBenne.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 envoieNouvelleBenne();
+            }
+        });
+        MAP.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, Geolocalisation.class));
             }
         });
     }

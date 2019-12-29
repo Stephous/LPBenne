@@ -42,4 +42,13 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="0dp" />
 
+    <Button
+        android:id="@+id/MAP"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="352dp"
+        android:text="MAP"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="0dp" />
+
 </android.support.constraint.ConstraintLayout>
