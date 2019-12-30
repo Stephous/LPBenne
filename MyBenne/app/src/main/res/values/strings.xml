@@ -5,4 +5,11 @@
     <string name="title_activity_geolocalisation">Map</string>
     <string name="title_activity_modifier_info_destinataire">modifierInfoDestinataire</string>
     <string name="title_activity_affichage">affichage</string>
+    <string name="d_pot_de_bennes">Dêpot de bennes</string>
+    <string name="modifier_les_informations_de_l_utilisateur">Modifier les informations de l\'utilisateur</string>
+    <string name="modifier_les_informations_du_destinataire">Modifier les informations du destinataire</string>
+    <string name="envoyer_une_nouvelle_benne">Envoyer une nouvelle benne</string>
+    <string name="image_presesntation">image_presesntation</string>
+    <string name="map">MAP</string>
+    <string name="afficher_les_donn_es">Afficher les données</string>
 </resources>

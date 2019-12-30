@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Dêpot de bennes"
+        android:text="@string/d_pot_de_bennes"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -23,38 +23,41 @@
         android:id="@+id/modifierInfoUtilisateur"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="340dp"
-        android:text="Modifier les informations de l'utilisateur"
+        android:text="@string/modifier_les_informations_de_l_utilisateur"
+        app:layout_constraintBottom_toTopOf="@+id/modifierInfoDestinataire"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/afficher" />
 
     <Button
         android:id="@+id/modifierInfoDestinataire"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="420dp"
-        android:text="Modifier les informations du destinataire"
+        android:text="@string/modifier_les_informations_du_destinataire"
+        app:layout_constraintBottom_toTopOf="@+id/envoieNouvelleBenne"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/modifierInfoUtilisateur" />
 
     <Button
         android:id="@+id/envoieNouvelleBenne"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="496dp"
-        android:text="Envoyer une nouvelle benne"
+        android:text="@string/envoyer_une_nouvelle_benne"
+        app:layout_constraintBottom_toTopOf="@+id/MAP"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/modifierInfoDestinataire" />
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="220dp"
         android:layout_height="159dp"
         android:layout_marginTop="108dp"
-        android:contentDescription="image_presesntation"
+        android:contentDescription="@string/image_presesntation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -65,18 +68,18 @@
         android:id="@+id/afficher"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="276dp"
-        android:text="Afficher les données"
-        app:layout_constraintTop_toTopOf="parent"
+        android:text="@string/afficher_les_donn_es"
+        app:layout_constraintBottom_toTopOf="@+id/modifierInfoUtilisateur"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
         tools:layout_editor_absoluteX="-66dp" />
 
     <Button
         android:id="@+id/MAP"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="352dp"
-        android:text="MAP"
-        app:layout_constraintTop_toTopOf="parent"
+        android:text="@string/map"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/envoieNouvelleBenne"
         tools:layout_editor_absoluteX="0dp" />
 
 </android.support.constraint.ConstraintLayout>
