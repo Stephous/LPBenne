@@ -19,8 +19,7 @@ public class Geolocalisation extends FragmentActivity implements OnMapReadyCallb
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_geolocalisation);
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
-        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
-                .findFragmentById(R.id.map);
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
     }
 
@@ -39,8 +38,16 @@ public class Geolocalisation extends FragmentActivity implements OnMapReadyCallb
         mMap = googleMap;
 
         // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        LatLng BenneMairie = new LatLng(49.847177, 3.287543);
+        LatLng BenneHotelMemorial = new LatLng(49.846054, 3.286342);
+        LatLng BenneGoldenPub = new LatLng(49.847342, 3.287045);
+        LatLng BenneBoulanderiePaul = new LatLng(49.845640, 3.290009);
+        LatLng BenneEcoleLyon = new LatLng(49.845280, 3.284628);
+        mMap.addMarker(new MarkerOptions().position(BenneMairie).title("Benne de la Mairie"));
+        mMap.addMarker(new MarkerOptions().position(BenneHotelMemorial).title("Benne de l'Hotel Memorial"));
+        mMap.addMarker(new MarkerOptions().position(BenneGoldenPub).title("Benne du Golden Pub"));
+        mMap.addMarker(new MarkerOptions().position(BenneBoulanderiePaul).title("Benne de la boulangerie Paul"));
+        mMap.addMarker(new MarkerOptions().position(BenneEcoleLyon).title("Benne de l'Ecole Lyon"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(BenneMairie));
     }
 }
