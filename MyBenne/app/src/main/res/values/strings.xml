@@ -12,4 +12,6 @@
     <string name="image_presesntation">image_presesntation</string>
     <string name="map">MAP</string>
     <string name="afficher_les_donn_es">Afficher les données</string>
+    <string name="modifier">MODIFIER</string>
+    <string name="beta_send_mairie">BETA SEND MAIRIE</string>
 </resources>
