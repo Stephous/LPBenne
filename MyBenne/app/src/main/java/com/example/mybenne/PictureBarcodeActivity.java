@@ -1,7 +1,5 @@
 package com.example.mybenne;
 
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
@@ -9,11 +7,9 @@ import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
+import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
-import android.support.annotation.NonNull;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.FileProvider;
 import android.util.Log;
 import android.util.SparseArray;
 import android.view.View;
@@ -21,8 +17,6 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.mybenne.BuildConfig;
-import com.example.mybenne.R;
 import com.google.android.gms.vision.Frame;
 import com.google.android.gms.vision.barcode.Barcode;
 import com.google.android.gms.vision.barcode.BarcodeDetector;
@@ -30,6 +24,10 @@ import com.google.android.gms.vision.barcode.BarcodeDetector;
 import java.io.File;
 import java.io.FileNotFoundException;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.FileProvider;
 
 
 public class PictureBarcodeActivity extends AppCompatActivity implements View.OnClickListener {
@@ -103,6 +101,7 @@ public class PictureBarcodeActivity extends AppCompatActivity implements View.On
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == CAMERA_REQUEST && resultCode == RESULT_OK) {
             launchMediaScanIntent();
             try {
