@@ -23,7 +23,6 @@ public class MainActivity extends AppCompatActivity {
         modifierInfoDestinataire = findViewById(R.id.modifierInfoDestinataire);
         envoieNouvelleBenne = findViewById(R.id.envoieNouvelleBenne);
         MAP = findViewById(R.id.MAP);
-        afficher = findViewById(R.id.afficher);
 
         modifierInfoUtilisateur.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,12 +41,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 envoieNouvelleBenne();
-            }
-        });
-        afficher.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                affichage();
             }
         });
         MAP.setOnClickListener(new View.OnClickListener() {
@@ -96,22 +89,6 @@ public class MainActivity extends AppCompatActivity {
     {
         Intent intent1 = new Intent();
         intent1.setClass(this, envoieNouvelleBenne.class);
-
-        Intent intent2 = getIntent();
-        if (intent2!= null)
-        {
-            Bundle extras2 = intent2.getExtras();
-            if (extras2 != null)
-            {
-                intent1.putExtra("Nom", extras2.getString("Nom"));
-            }
-            startActivity(intent1);
-        }
-    }
-    protected void affichage()
-    {
-        Intent intent1 = new Intent();
-        intent1.setClass(this, affichagedonnees.class);
 
         Intent intent2 = getIntent();
         if (intent2!= null)

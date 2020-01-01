@@ -28,7 +28,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/afficher" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <Button
         android:id="@+id/modifierInfoDestinataire"
@@ -63,15 +63,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:src="@drawable/image_illustration" />
-
-    <Button
-        android:id="@+id/afficher"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/afficher_les_donn_es"
-        app:layout_constraintBottom_toTopOf="@+id/modifierInfoUtilisateur"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        tools:layout_editor_absoluteX="-66dp" />
 
     <Button
         android:id="@+id/MAP"
