@@ -62,7 +62,9 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:src="@drawable/image_illustration" />
+        app:srcCompat="@drawable/image_illustration"
+        tools:src="@drawable/image_illustration"
+        tools:srcCompat="@drawable/image_illustration" />
 
     <Button
         android:id="@+id/MAP"
