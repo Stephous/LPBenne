@@ -14,4 +14,5 @@
     <string name="afficher_les_donn_es">Afficher les données</string>
     <string name="modifier">MODIFIER</string>
     <string name="beta_send_mairie">BETA SEND MAIRIE</string>
+    <string name="open_camera">Open Camera</string>
 </resources>

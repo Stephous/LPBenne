@@ -8,6 +8,11 @@
     <uses-permission android:name="android.permission.SEND_SMS" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-feature android:required="true" android:name="android.hardware.camera"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-feature android:name="android.hardware.camera.autofocus"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <uses-feature
         android:glEsVersion="0x00020000"
@@ -25,12 +30,12 @@
             android:label="@string/title_activity_modifier_info_destinataire"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Geolocalisation" />
-        <meta-data
-            android:name="com.google.android.geo.API_KEY"
-            android:value="@string/google_maps_key" />
+        <meta-data android:name="com.google.android.geo.API_KEY" android:value="@string/google_maps_key" />
         <activity android:name=".envoieNouvelleBenne" />
         <activity android:name=".modifierInfoUtilisateur" />
         <activity android:name=".QrCode" />
+        <activity android:name=".PictureBarcodeActivity"/>
+        <activity android:name=".ScannedBarcodeActivity"/>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
