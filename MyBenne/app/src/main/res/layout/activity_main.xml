@@ -21,14 +21,13 @@
 
     <Button
         android:id="@+id/modifierInfoUtilisateur"
-        android:layout_width="0dp"
+        android:layout_width="411dp"
         android:layout_height="wrap_content"
         android:text="@string/modifier_les_informations_de_l_utilisateur"
         app:layout_constraintBottom_toTopOf="@+id/modifierInfoDestinataire"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <Button
         android:id="@+id/modifierInfoDestinataire"
@@ -37,7 +36,6 @@
         android:text="@string/modifier_les_informations_du_destinataire"
         app:layout_constraintBottom_toTopOf="@+id/envoieNouvelleBenne"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/modifierInfoUtilisateur" />
 
@@ -48,7 +46,6 @@
         android:text="@string/envoyer_une_nouvelle_benne"
         app:layout_constraintBottom_toTopOf="@+id/MAP"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/modifierInfoDestinataire" />
 
@@ -56,15 +53,13 @@
         android:id="@+id/imageView"
         android:layout_width="220dp"
         android:layout_height="159dp"
-        android:layout_marginTop="108dp"
         android:contentDescription="@string/image_presesntation"
+        app:layout_constraintBottom_toTopOf="@+id/textView4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/image_illustration"
-        tools:src="@drawable/image_illustration"
-        tools:srcCompat="@drawable/image_illustration" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonScanBarcode"
+        tools:src="@drawable/image_illustration" />
 
     <Button
         android:id="@+id/MAP"
@@ -72,7 +67,42 @@
         android:layout_height="wrap_content"
         android:text="@string/map"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/envoieNouvelleBenne"
-        tools:layout_editor_absoluteX="0dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/envoieNouvelleBenne" />
 
+
+    <Button
+        android:id="@+id/buttonTakePicture"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="@string/take_barcode_picture"
+        app:layout_constraintBottom_toTopOf="@+id/buttonScanBarcode"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+
+        android:id="@+id/buttonScanBarcode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/scan_barcode"
+        app:layout_constraintBottom_toTopOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonTakePicture" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/qr_code_scanned_results_automatically_copied_to_your_clipboard_you_just_paste_it_in_the_browser_or_use_it_in_any_place_where_ever_you_want"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/modifierInfoUtilisateur"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 </android.support.constraint.ConstraintLayout>

@@ -14,5 +14,9 @@
     <string name="afficher_les_donn_es">Afficher les données</string>
     <string name="modifier">MODIFIER</string>
     <string name="beta_send_mairie">BETA SEND MAIRIE</string>
-    <string name="open_camera">Open Camera</string>
+    <string name="take_barcode_picture">Take Barcode Picture</string>
+    <string name="scan_barcode">Scan Barcode</string>
+    <string name="open_camera">OPEN CAMERA</string>
+    <string name="qr_code_scanned_results_automatically_copied_to_your_clipboard_you_just_paste_it_in_the_browser_or_use_it_in_any_place_where_ever_you_want">QR code scanned results automatically copied to your clipboard !</string>
+    <string name="imageview">imageView</string>
 </resources>
