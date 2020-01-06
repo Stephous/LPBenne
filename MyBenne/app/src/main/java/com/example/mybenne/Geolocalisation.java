@@ -2,11 +2,15 @@ package com.example.mybenne;
 
 import android.Manifest;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.database.DatabaseUtils;
+import android.location.Location;
+import android.location.LocationManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.telephony.SmsManager;
 import android.util.Log;
@@ -27,6 +31,7 @@ import androidx.fragment.app.FragmentActivity;
 public class Geolocalisation extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
+    private Location mLocation;
     Button BetaMairie;
     DatabaseManager db = new DatabaseManager(this);
     SharedPreferences permissionStatus;
@@ -116,6 +121,7 @@ public class Geolocalisation extends FragmentActivity implements OnMapReadyCallb
 //                        "Benne n°" + idBenne +
 //                        " Aux coordonnées " + posbenne +
 //                        "mise à jour par : " + userinfo,null,null);
+                getCoord();
             }
         });
     }
@@ -153,6 +159,56 @@ public class Geolocalisation extends FragmentActivity implements OnMapReadyCallb
         mMap.addMarker(new MarkerOptions().position(BenneBoulanderiePaul).title("Benne de la boulangerie Paul"));
         mMap.addMarker(new MarkerOptions().position(BenneEcoleLyon).title("Benne de l'Ecole Lyon"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(BenneMairie));
+    }
+    public void getCoord(){
+
+        LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+
+        if(locationManager.isProviderEnabled(locationManager.GPS_PROVIDER)){
+
+            locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 5000, 10,this);
+            locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 5000, 10,this);
+
+        }else if(locationManager.isProviderEnabled(locationManager.NETWORK_PROVIDER)){
+            if(Build.VERSION.SDK_INT >= 23) {
+                if (this.checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
+                        && this.checkSelfPermission(Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                    //Permission refusée je ne fais rien
+                }else{
+                    mLocation = locationManager.getLastKnownLocation(locationManager.NETWORK_PROVIDER);
+                }
+            }else{
+                mLocation = locationManager.getLastKnownLocation(locationManager.NETWORK_PROVIDER);
+            }
+        }else{
+            Toast.makeText(Geolocalisation.this, "Impossible de récupérer vos coordonnées", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+
+    @Override
+    public void onLocationChanged(Location location) {
+
+        if(location != null){
+            mLocation = location;
+            Log.d("APP", "Lat = " + mLocation.getLatitude() + " Longitude = " + mLocation.getLongitude());
+
+        }
+    }
+
+    @Override
+    public void onStatusChanged(String provider, int status, Bundle extras) {
+
+    }
+
+    @Override
+    public void onProviderEnabled(String provider) {
+
+    }
+
+    @Override
+    public void onProviderDisabled(String provider) {
+
     }
 }
 
